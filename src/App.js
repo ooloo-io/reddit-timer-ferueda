@@ -2,20 +2,24 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GlobalStyle from './styles/globalStyles';
 
-import { HOME, SEARCH } from './constants/routes';
+import * as ROUTES from './constants/routes';
 
 import Home from './pages/Home';
 import Search from './pages/Search';
+
+import Header from './components/Header/Header';
 
 const App = () => (
   <>
     <GlobalStyle />
     <Router>
-      <Route exact path={HOME}>
+      <Header />
+
+      <Route exact path={ROUTES.HOME}>
         <Home />
       </Route>
 
-      <Route path={SEARCH}>
+      <Route path={ROUTES.SEARCH}>
         <Search />
       </Route>
     </Router>
