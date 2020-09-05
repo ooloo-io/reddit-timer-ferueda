@@ -42,8 +42,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --titles-font: 'Bitter', sans-serif;
-    --main-font: 'Montserrat', sans-serif;
+    --headline-font: 'Bitter', sans-serif;
+    --default-font: 'Montserrat', sans-serif;
     --bg--color: #fff;
     --container-width: 1440px;
     --main-black: #000;
@@ -51,17 +51,17 @@ const GlobalStyle = createGlobalStyle`
     --primary-color: #fdb755;
     --link-color: #0087ff;
     --brownish-grey: #636363;
-    --main-header: 38px;
-    --section-header: 24px;
   }
 
   html {
     box-sizing: border-box;
-    font-size: 16px;
   }
 
   body {
-    font-family: var(--main-font);
+    font-family: ${({ theme }) => theme.font.family.default};
+    font-size: ${({ theme }) => theme.font.size.default};
+    line-height: ${({ theme }) => theme.font.lineHeight.default};
+    color: ${({ theme }) => theme.color.text};
   }
 
   *, *:before, *:after {
@@ -72,6 +72,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-weight: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${({ theme }) => theme.font.family.headline};
+    color: ${({ theme }) => theme.color.headline};
+  }
+
+  a {
+    color: ${({ theme }) => theme.color.link};
+    text-decoration: none;
   }
 
   ol, ul {
