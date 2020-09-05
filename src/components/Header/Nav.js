@@ -12,15 +12,6 @@ const StyledList = styled.ul`
   li:not(:first-child):not(:last-child) {
     margin: 0 12.5px;
   }
-
-  a {
-    text-decoration: none;
-    &:active,
-    &:visited,
-    &:link {
-      color: inherit;
-    }
-  }
 `;
 
 const Nav = () => (
