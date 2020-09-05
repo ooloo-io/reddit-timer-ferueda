@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/globalStyles';
 
@@ -15,23 +15,21 @@ const App = () => (
   <>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
-        <Header />
+      <Header />
 
-        <Switch>
-          <Route exact path={ROUTES.HOME}>
-            <Home />
-          </Route>
+      <Switch>
+        <Route exact path={ROUTES.HOME}>
+          <Home />
+        </Route>
 
-          <Route path={ROUTES.SEARCH}>
-            <Search />
-          </Route>
+        <Route path={ROUTES.SEARCH}>
+          <Search />
+        </Route>
 
-          <Route>
-            <h1>Page not found</h1>
-          </Route>
-        </Switch>
-      </Router>
+        <Route>
+          <h1>Page not found</h1>
+        </Route>
+      </Switch>
     </ThemeProvider>
   </>
 );
