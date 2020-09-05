@@ -4,29 +4,29 @@ import styled from 'styled-components';
 
 import * as ROUTES from '../../constants/routes';
 
-const StyledList = styled.ul`
+const ListWrapper = styled.ul`
   display: flex;
-  color: var(--brownish-grey);
-  font-weight: 400;
+`;
 
-  li:not(:first-child):not(:last-child) {
-    margin: 0 12.5px;
+const ListItem = styled.li`
+  &:not(:first-child):not(:last-child) {
+    margin: 0 25px;
   }
 `;
 
 const Nav = () => (
   <nav>
-    <StyledList>
-      <li>
-        <Link to={{ pathname: ROUTES.SEARCH, search: 'q=javascript' }}>Search</Link>
-      </li>
-      <li>
+    <ListWrapper>
+      <ListItem>
+        <Link to={{ pathname: ROUTES.SEARCH, search: 'subreddit=javascript' }}>Search</Link>
+      </ListItem>
+      <ListItem>
         <Link to={`${ROUTES.HOME}${ROUTES.HOWITWORKS}`}>How it works</Link>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
         <Link to={`${ROUTES.HOME}${ROUTES.ABOUT}`}>About</Link>
-      </li>
-    </StyledList>
+      </ListItem>
+    </ListWrapper>
   </nav>
 );
 
