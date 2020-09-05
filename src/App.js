@@ -1,24 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/globalStyles';
 
-import { HOME, SEARCH } from './constants/routes';
+import * as ROUTES from './constants/routes';
+import theme from './styles/theme';
 
 import Home from './pages/Home';
 import Search from './pages/Search';
+import Header from './components/Header/Header';
 
 const App = () => (
   <>
-    <GlobalStyle />
-    <Router>
-      <Route exact path={HOME}>
-        <Home />
-      </Route>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header />
 
-      <Route path={SEARCH}>
-        <Search />
-      </Route>
-    </Router>
+      <Switch>
+        <Route exact path={ROUTES.HOME}>
+          <Home />
+        </Route>
+
+        <Route path={ROUTES.SEARCH}>
+          <Search />
+        </Route>
+
+        <Route>
+          <h1>Page not found</h1>
+        </Route>
+      </Switch>
+    </ThemeProvider>
   </>
 );
 
