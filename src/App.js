@@ -8,7 +8,6 @@ import theme from './styles/theme';
 
 import Home from './pages/Home';
 import Search from './pages/Search';
-
 import Header from './components/Header/Header';
 
 const App = () => (
