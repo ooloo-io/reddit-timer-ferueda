@@ -9,9 +9,11 @@ import Nav from './Nav';
 
 const StyledHeader = styled.header`
   display: flex;
-  max-width: var(--container-width);
+  width: 100%;
+  max-width: calc(var(--container-width) - 10rem);
+  height: ${({ theme }) => theme.header.height};
   margin: 0 auto;
-  padding: 2rem 5rem;
+  padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
 `;
