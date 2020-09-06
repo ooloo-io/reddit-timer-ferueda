@@ -8,37 +8,41 @@ import Logo from './Logo';
 
 const Wrapper = styled.footer`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 100px;
-  padding: 0 250px;
+  height: ${({ theme }) => theme.footer.height};
+  width: 100%;
+  max-width: calc(var(--container-width) - 500px + 40px);
+  margin: 0 auto;
+  padding: 0 20px;
 `;
 
 const StyledLink = styled(Link)`
+  flex: 1;
   font-size: 14px;
   height: 18px;
-  width: 112px;
   letter-spacing: normal;
   line-height: normal;
 `;
 
-const StyledAnchor = styled.a`
-  font-size: 14px;
-  height: 18px;
+const RightLink = styled(StyledLink)`
+  text-align: right;
+  width: 112px;
+`;
+
+const LeftLink = styled(StyledLink)`
+  text-align: left;
   width: 55px;
-  letter-spacing: normal;
-  line-height: normal;
 `;
 
 const Footer = () => (
   <Wrapper>
-    <StyledAnchor href="https://ooloo.io/employers" target="_blank" rel="noopener noreferrer">
+    <LeftLink as="a" href="https://ooloo.io/employers" target="_blank" rel="noopener noreferrer">
       ooloo.io
-    </StyledAnchor>
+    </LeftLink>
     <Link to={ROUTES.HOME}>
       <Logo />
     </Link>
-    <StyledLink to={ROUTES.TERMS}>Terms & Privacy</StyledLink>
+    <RightLink to={ROUTES.TERMS}>Terms & Privacy</RightLink>
   </Wrapper>
 );
 
