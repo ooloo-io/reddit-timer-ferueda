@@ -10,9 +10,10 @@ import Nav from './Nav';
 const StyledHeader = styled.header`
   display: flex;
   width: 100%;
-  height: 100px;
+  max-width: calc(var(--container-width) - 10rem);
+  height: ${({ theme }) => theme.header.height};
   margin: 0 auto;
-  padding: 0 5rem;
+  padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
 `;
