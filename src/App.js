@@ -16,29 +16,36 @@ const AppContainer = styled.div`
   margin: 0 auto;
 `;
 
+const MainContainer = styled.main`
+  height: ${(props) => `calc(100vh - ${props.theme.header.height} - ${props.theme.footer.height})`};
+  width: 100%;
+`;
+
 const App = () => (
-  <AppContainer>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <AppContainer>
       <Header />
 
-      <Switch>
-        <Route exact path={ROUTES.HOME}>
-          <Home />
-        </Route>
+      <MainContainer>
+        <Switch>
+          <Route exact path={ROUTES.HOME}>
+            <Home />
+          </Route>
 
-        <Route path={ROUTES.SEARCH}>
-          <Search />
-        </Route>
+          <Route path={ROUTES.SEARCH}>
+            <Search />
+          </Route>
 
-        <Route>
-          <h1>Page not found</h1>
-        </Route>
-      </Switch>
+          <Route>
+            <h1>Page not found</h1>
+          </Route>
+        </Switch>
+      </MainContainer>
 
       <Footer />
-    </ThemeProvider>
-  </AppContainer>
+    </AppContainer>
+  </ThemeProvider>
 );
 
 export default App;
