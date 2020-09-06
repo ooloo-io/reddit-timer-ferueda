@@ -18,6 +18,12 @@ const theme = {
       default: 1.69,
     },
   },
+  header: {
+    height: '100px',
+  },
+  footer: {
+    height: '100px',
+  },
 };
 
 export default theme;
