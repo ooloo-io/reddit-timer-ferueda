@@ -35,7 +35,9 @@ describe('Header', () => {
 
       userEvent.click(logo);
 
-      expect(screen.getByRole('heading', { name: /this is the home/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', { name: /no reactions to your reddit posts?/i }),
+      ).toBeInTheDocument();
     });
   });
 
@@ -64,7 +66,9 @@ describe('Header', () => {
 
     test('search item link defaults to "javascript" query', () => {
       setup();
-      expect(getWithinHeader().getByRole('link', { name: /search/i }).href).toMatch(/\?subreddit=javascript/i);
+      expect(getWithinHeader().getByRole('link', { name: /search/i }).href).toMatch(
+        /\?subreddit=javascript/i,
+      );
     });
 
     test('how it works item links to #how-it-works', () => {
