@@ -1,13 +1,19 @@
 const theme = {
+  mainContainer: {
+    width: '1440px',
+  },
   color: {
-    text: 'var(--gray-base)',
-    headline: 'var(--main-black)',
-    link: 'var(--brownish-grey)',
+    black: '#000',
+    link: '#0087ff',
+    grayBase: '#93918f',
+    primary: '#fdb755',
+    brownishGray: '#636363',
+    white: '#fff',
   },
   font: {
     family: {
-      default: 'var(--default-font)',
-      headline: 'var(--headline -font)',
+      default: 'Montserrat, sans-serif',
+      headline: 'Bitter, sans-serif',
     },
     size: {
       default: '16px',
