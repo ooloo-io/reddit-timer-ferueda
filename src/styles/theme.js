@@ -30,6 +30,12 @@ const theme = {
   footer: {
     height: '100px',
   },
+  button: {
+    fontSize: '14px',
+    lineHeight: 0.64,
+    fontWeight: 500,
+    height: '36px',
+  },
 };
 
 export default theme;
