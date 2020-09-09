@@ -12,18 +12,19 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 const AppContainer = styled.div`
-  max-width: var(--container-width);
+  max-width: ${(props) => props.theme.mainContainer.width};
   margin: 0 auto;
 `;
 
 const MainContainer = styled.main`
-  height: ${(props) => `calc(100vh - ${props.theme.header.height} - ${props.theme.footer.height})`};
+  min-height: ${(props) => `calc(100vh - ${props.theme.header.height} - ${props.theme.footer.height})`};
   width: 100%;
 `;
 
 const App = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
+
     <AppContainer>
       <Header />
 

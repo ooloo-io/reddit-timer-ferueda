@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
   align-items: center;
   height: ${({ theme }) => theme.footer.height};
   width: 100%;
-  max-width: calc(var(--container-width) - 500px + 40px);
+  max-width: calc(${({ theme }) => theme.mainContainer.width} - 500px + 40px);
   margin: 0 auto;
   padding: 0 20px;
 `;
@@ -36,7 +36,12 @@ const LeftLink = styled(StyledLink)`
 
 const Footer = () => (
   <Wrapper>
-    <LeftLink as="a" href="https://ooloo.io/employers" target="_blank" rel="noopener noreferrer">
+    <LeftLink
+      as="a"
+      href="https://ooloo.io/employers"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       ooloo.io
     </LeftLink>
     <Link to={ROUTES.HOME}>

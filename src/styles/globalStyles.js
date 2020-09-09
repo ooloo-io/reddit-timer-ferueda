@@ -41,18 +41,6 @@ const GlobalStyle = createGlobalStyle`
       url("/fonts/Bitter-Regular.woff2") format("woff2");
   }
 
-  :root {
-    --headline-font: 'Bitter', sans-serif;
-    --default-font: 'Montserrat', sans-serif;
-    --bg--color: #fff;
-    --container-width: 1440px;
-    --main-black: #000;
-    --gray-base: #93918f;
-    --primary-color: #fdb755;
-    --link-color: #0087ff;
-    --brownish-grey: #636363;
-  }
-
   html {
     box-sizing: border-box;
   }
@@ -61,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.font.family.default};
     font-size: ${({ theme }) => theme.font.size.default};
     line-height: ${({ theme }) => theme.font.lineHeight.default};
-    color: ${({ theme }) => theme.color.text};
+    color: ${({ theme }) => theme.color.grayBase};
   }
 
   *, *:before, *:after {
@@ -76,11 +64,11 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-family: ${({ theme }) => theme.font.family.headline};
-    color: ${({ theme }) => theme.color.headline};
+    color: ${({ theme }) => theme.color.black};
   }
 
   a {
-    color: ${({ theme }) => theme.color.link};
+    color: ${({ theme }) => theme.color.brownishGray};
     text-decoration: none;
   }
 

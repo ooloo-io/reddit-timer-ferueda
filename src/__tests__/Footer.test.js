@@ -36,7 +36,9 @@ describe('Footer', () => {
 
       userEvent.click(logo);
 
-      expect(screen.getByRole('heading', { name: /this is the home/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', { name: /no reactions to your reddit posts?/i }),
+      ).toBeInTheDocument();
     });
   });
 
@@ -49,12 +51,16 @@ describe('Footer', () => {
 
     test('ooloo.io links to the right url', () => {
       setup();
-      expect(getWithinFooter().getByRole('link', { name: /ooloo\.io/i }).href).toMatch(/ooloo\.io/i);
+      expect(getWithinFooter().getByRole('link', { name: /ooloo\.io/i }).href).toMatch(
+        /ooloo\.io/i,
+      );
     });
 
     test('terms & privacy links to terms page', () => {
       setup();
-      expect(getWithinFooter().getByRole('link', { name: /terms & privacy/i }).href).toMatch(/\/terms/i);
+      expect(getWithinFooter().getByRole('link', { name: /terms & privacy/i }).href).toMatch(
+        /\/terms/i,
+      );
     });
   });
 });
