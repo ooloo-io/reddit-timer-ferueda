@@ -18,7 +18,7 @@ const Nav = () => (
   <nav>
     <ListWrapper>
       <ListItem>
-        <Link to={{ pathname: ROUTES.SEARCH, search: 'subreddit=javascript' }}>Search</Link>
+        <Link to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>Search</Link>
       </ListItem>
       <ListItem>
         <Link to={`${ROUTES.HOME}${ROUTES.HOWITWORKS}`}>How it works</Link>

@@ -10,7 +10,7 @@ import Nav from './Nav';
 const StyledHeader = styled.header`
   display: flex;
   width: 100%;
-  max-width: calc(var(--container-width) - 10rem);
+  max-width: calc(${({ theme }) => theme.mainContainer.width} - 10rem);
   height: ${({ theme }) => theme.header.height};
   margin: 0 auto;
   padding: 0 2rem;

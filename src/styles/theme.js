@@ -1,13 +1,19 @@
 const theme = {
+  mainContainer: {
+    width: '1440px',
+  },
   color: {
-    text: 'var(--gray-base)',
-    headline: 'var(--main-black)',
-    link: 'var(--brownish-grey)',
+    black: '#000',
+    link: '#0087ff',
+    grayBase: '#93918f',
+    primary: '#fdb755',
+    brownishGray: '#636363',
+    white: '#fff',
   },
   font: {
     family: {
-      default: 'var(--default-font)',
-      headline: 'var(--headline -font)',
+      default: 'Montserrat, sans-serif',
+      headline: 'Bitter, sans-serif',
     },
     size: {
       default: '16px',
@@ -17,12 +23,22 @@ const theme = {
     lineHeight: {
       default: 1.69,
     },
+    letterSpacing: {
+      default: '0.03px',
+      heading: 'normal',
+    },
   },
   header: {
     height: '100px',
   },
   footer: {
     height: '100px',
+  },
+  button: {
+    fontSize: '14px',
+    lineHeight: 0.64,
+    fontWeight: 500,
+    height: '36px',
   },
 };
 
