@@ -23,6 +23,10 @@ const theme = {
     lineHeight: {
       default: 1.69,
     },
+    letterSpacing: {
+      default: '0.03px',
+      heading: 'normal',
+    },
   },
   header: {
     height: '100px',
