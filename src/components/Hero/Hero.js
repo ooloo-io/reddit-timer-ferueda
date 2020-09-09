@@ -7,12 +7,13 @@ import * as ROUTES from '../../constants/routes';
 import HeroTable from './HeroTable';
 import Button from '../shared/Button';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 `;
 
 const MainHeadline = styled.h1`
@@ -23,8 +24,12 @@ const MainHeadline = styled.h1`
   margin-bottom: 20px;
 `;
 
-const SubHeadline = styled.p`
+const SubHeadline = styled.h2`
   text-align: center;
+  font-family: ${({ theme }) => theme.font.family.default};
+  font-size: ${({ theme }) => theme.font.size.default};
+  color: ${({ theme }) => theme.color.grayBase};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.default};
   min-height: 19px;
 `;
 
