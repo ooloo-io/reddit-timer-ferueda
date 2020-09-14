@@ -63,8 +63,8 @@ const InfoSection = () => {
 
   return (
     <Wrapper>
-      <FirstRow ref={firstRowRef}>
-        <SectionHeader>How it works</SectionHeader>
+      <FirstRow>
+        <SectionHeader ref={firstRowRef}>How it works</SectionHeader>
         <List>
           <ListItem>• We find the 500 top posts from the past year for a subreddit.</ListItem>
           <ListItem>
@@ -74,8 +74,8 @@ const InfoSection = () => {
         </List>
       </FirstRow>
 
-      <SecondRow ref={secondRowRef}>
-        <SectionHeader>About</SectionHeader>
+      <SecondRow>
+        <SectionHeader ref={secondRowRef}>About</SectionHeader>
         <Text>
           This app was created during a course on&nbsp;
           <a href={ROUTES.OOLOO} target="_blank" rel="noopener noreferrer">
