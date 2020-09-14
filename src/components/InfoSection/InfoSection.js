@@ -43,7 +43,7 @@ const Text = styled.p`
   margin-top: 13px;
 `;
 
-const scrollToSection = (sectionRef) => sectionRef.scrollIntoView({ behavior: 'smooth' });
+const scrollToSection = (el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
 const InfoSection = () => {
   const location = useLocation();
@@ -57,7 +57,7 @@ const InfoSection = () => {
     }
 
     if (location.hash === ROUTES.ABOUT && location.state.fromNav) {
-      scrollToSection(firstRowRef.current);
+      scrollToSection(secondRowRef.current);
     }
   }, [location]);
 
