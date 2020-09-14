@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.color.brownishGray};
+    color: ${({ theme }) => theme.color.link};
     text-decoration: none;
   }
 
