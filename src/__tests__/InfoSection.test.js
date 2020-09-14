@@ -30,6 +30,6 @@ describe('InfoSection', () => {
     );
     expect(
       within(main).getByRole('link', { name: /click here for more information/i }),
-    ).not.toHaveAttribute('href', 'https://ooloo.io/employers');
+    ).toHaveAttribute('href', 'https://ooloo.io/employers');
   });
 });
