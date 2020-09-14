@@ -52,17 +52,13 @@ const InfoSection = () => {
   const secondRowRef = useRef(null);
 
   useEffect(() => {
-    const timeout = window.setTimeout(() => {
-      if (location.hash === ROUTES.HOWITWORKS && location.state.fromNav) {
-        scrollToSection(firstRowRef.current);
-      }
+    if (location.hash === ROUTES.HOWITWORKS && location.state.fromNav) {
+      scrollToSection(firstRowRef.current);
+    }
 
-      if (location.hash === ROUTES.ABOUT && location.state.fromNav) {
-        scrollToSection(firstRowRef.current);
-      }
-    }, 200);
-
-    return () => window.clearTimeout(timeout);
+    if (location.hash === ROUTES.ABOUT && location.state.fromNav) {
+      scrollToSection(firstRowRef.current);
+    }
   }, [location]);
 
   return (
