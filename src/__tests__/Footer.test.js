@@ -52,7 +52,7 @@ describe('Footer', () => {
     test('ooloo.io links to the right url', () => {
       setup();
       expect(getWithinFooter().getByRole('link', { name: /ooloo\.io/i }).href).toMatch(
-        /ooloo\.io/i,
+        /ooloo\.io\/employers/i,
       );
     });
 

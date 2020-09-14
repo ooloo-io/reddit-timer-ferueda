@@ -37,7 +37,7 @@ const LeftLink = styled(StyledLink)`
 
 const Footer = () => (
   <Wrapper>
-    <LeftLink as="a" href={ROUTES.OOLOO} target="_blank" rel="noopener noreferrer">
+    <LeftLink as="a" href={`${ROUTES.OOLOO}/employers`} target="_blank" rel="noopener noreferrer">
       ooloo.io
     </LeftLink>
     <Link to={ROUTES.HOME}>
