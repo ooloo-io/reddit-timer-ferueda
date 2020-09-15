@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import * as ROUTES from '../../constants/routes';
 
-const Wrapper = styled.section`
+const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
