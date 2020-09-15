@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Search = () => <h1>This is the search page</h1>;
+import SubredditForm from '../components/SubredditForm/SubredditForm';
+
+const Search = () => (
+  <>
+    <SubredditForm />
+  </>
+);
 
 export default Search;
