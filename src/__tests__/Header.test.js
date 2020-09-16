@@ -61,7 +61,7 @@ describe('Header', () => {
 
       userEvent.click(linkItem);
 
-      expect(screen.getByRole('heading', { name: /this is the search page/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /find the best time/i })).toBeInTheDocument();
     });
 
     test('search item link defaults to "javascript" query', () => {

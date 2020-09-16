@@ -36,7 +36,7 @@ describe('Hero', () => {
 
       userEvent.click(button);
 
-      expect(screen.getByRole('heading', { name: /search page/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /find the best time/i })).toBeInTheDocument();
     });
   });
 
@@ -51,7 +51,7 @@ describe('Hero', () => {
       setup();
       userEvent.click(screen.getByAltText(/hero table/i));
 
-      expect(screen.getByRole('heading', { name: /search page/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /find the best time/i })).toBeInTheDocument();
     });
   });
 });
