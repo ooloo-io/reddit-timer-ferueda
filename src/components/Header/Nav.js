@@ -14,17 +14,29 @@ const ListItem = styled.li`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.color.brownishGray};
+`;
+
 const Nav = () => (
   <nav>
     <ListWrapper>
       <ListItem>
-        <Link to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>Search</Link>
+        <StyledLink to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>
+          Search
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to={`${ROUTES.HOME}${ROUTES.HOWITWORKS}`}>How it works</Link>
+        <StyledLink
+          to={{ pathname: ROUTES.HOME, hash: ROUTES.HOWITWORKS, state: { fromNav: true } }}
+        >
+          How it works
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to={`${ROUTES.HOME}${ROUTES.ABOUT}`}>About</Link>
+        <StyledLink to={{ pathname: ROUTES.HOME, hash: ROUTES.ABOUT, state: { fromNav: true } }}>
+          About
+        </StyledLink>
       </ListItem>
     </ListWrapper>
   </nav>

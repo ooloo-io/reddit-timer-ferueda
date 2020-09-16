@@ -12,7 +12,7 @@ const Wrapper = styled.footer`
   height: ${({ theme }) => theme.footer.height};
   width: 100%;
   max-width: calc(${({ theme }) => theme.mainContainer.width} - 500px + 40px);
-  margin: 0 auto;
+  margin: 99px auto 0 auto;
   padding: 0 20px;
 `;
 
@@ -20,6 +20,7 @@ const StyledLink = styled(Link)`
   flex: 1;
   font-size: 14px;
   height: 18px;
+  color: ${({ theme }) => theme.color.brownishGray};
   letter-spacing: normal;
   line-height: normal;
 `;
@@ -36,12 +37,7 @@ const LeftLink = styled(StyledLink)`
 
 const Footer = () => (
   <Wrapper>
-    <LeftLink
-      as="a"
-      href="https://ooloo.io/employers"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <LeftLink as="a" href={`${ROUTES.OOLOO}/employers`} target="_blank" rel="noopener noreferrer">
       ooloo.io
     </LeftLink>
     <Link to={ROUTES.HOME}>
