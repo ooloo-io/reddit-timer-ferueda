@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -66,7 +66,7 @@ const SubredditForm = () => {
   const location = useLocation();
   const history = useHistory();
 
-  const [inputValue, setInputValue] = useState(location.search.replace(/\?subreddit=/i, ''));
+  const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -82,6 +82,10 @@ const SubredditForm = () => {
       });
     }
   };
+
+  useEffect(() => {
+    setInputValue(location.search.replace(/\?subreddit=/i, ''));
+  }, [location]);
 
   return (
     <Wrapper>
