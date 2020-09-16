@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Button from '../shared/Button';
+import * as ROUTES from '../../constants/routes';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -42,10 +43,30 @@ const Label = styled.label`
   color: #9e9e9e;
 `;
 
-const InputButton = styled(Button)``;
+const InputButton = styled.button`
+  background-color: ${({ theme }) => theme.color.primary};
+  font-family: ${({ theme }) => theme.font.family.default};
+  font-size: ${({ theme }) => theme.button.fontSize};
+  color: ${({ theme }) => theme.color.white};
+  line-height: ${({ theme }) => theme.button.lineHeight};
+  font-weight: ${({ theme }) => theme.button.fontWeight};
+  height: ${({ theme }) => theme.button.height};
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 4px;
+  padding: 0 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+`;
 
 const SubredditForm = () => {
-  const [inputValue, setInputValue] = useState('javascript');
+  const location = useLocation();
+  const history = useHistory();
+
+  const [inputValue, setInputValue] = useState(location.search.replace(/\?subreddit=/i, ''));
 
   const handleInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -53,7 +74,13 @@ const SubredditForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
+
+    if (inputValue !== '') {
+      history.push({
+        pathname: ROUTES.SEARCH,
+        search: `subreddit=${inputValue}`,
+      });
+    }
   };
 
   return (
@@ -62,7 +89,7 @@ const SubredditForm = () => {
       <Form onSubmit={handleSubmit}>
         <Label htmlFor="subreddit">r/</Label>
         <Input id="subreddit" type="text" value={inputValue} onChange={handleInputChange} />
-        <InputButton>Search</InputButton>
+        <InputButton type="submit">Search</InputButton>
       </Form>
     </Wrapper>
   );
