@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { oneOfType } from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.article`
@@ -16,17 +16,15 @@ const Content = styled.div`
   margin-top: 13px;
 `;
 
-const Info = ({ heading, children }) => {
-  return (
-    <Wrapper>
-      <Heading>{heading}</Heading>
-      <Content>{children}</Content>
-    </Wrapper>
-  );
-};
+const Info = React.forwardRef(({ heading, children }, ref) => (
+  <Wrapper>
+    <Heading ref={ref}>{heading}</Heading>
+    <Content>{children}</Content>
+  </Wrapper>
+));
 
 Info.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(oneOfType([PropTypes.string, PropTypes.object])).isRequired,
   heading: PropTypes.string.isRequired,
 };
 

@@ -24,18 +24,22 @@ const InfoSection = () => {
   const secondRowRef = useRef(null);
 
   useEffect(() => {
-    if (location.hash === ROUTES.HOWITWORKS && location.state.fromNav) {
-      scrollToSection(firstRowRef.current);
-    }
+    const timeout = window.setTimeout(() => {
+      if (location.hash === ROUTES.HOWITWORKS && location.state.fromNav) {
+        scrollToSection(firstRowRef.current);
+      }
 
-    if (location.hash === ROUTES.ABOUT && location.state.fromNav) {
-      scrollToSection(secondRowRef.current);
-    }
+      if (location.hash === ROUTES.ABOUT && location.state.fromNav) {
+        scrollToSection(secondRowRef.current);
+      }
+    }, 100);
+
+    return () => window.clearTimeout(timeout);
   }, [location]);
 
   return (
     <Wrapper>
-      <Info heading="How it works">
+      <Info heading="How it works" ref={firstRowRef}>
         • We find the 500 top posts from the past year for a subreddit.
         <br />
         • The data is visualized in a heatmap grouped by weekday and hour of the day.
@@ -43,7 +47,7 @@ const InfoSection = () => {
         • See immediately when to submit your reddit post.
       </Info>
 
-      <Info heading="About">
+      <Info heading="About" ref={secondRowRef}>
         This app was created during a course on&nbsp;
         <a href={ROUTES.OOLOO} target="_blank" rel="noopener noreferrer">
           ooloo.io
