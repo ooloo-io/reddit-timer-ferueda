@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { oneOfType } from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.article`
@@ -24,7 +24,7 @@ const Info = React.forwardRef(({ heading, children }, ref) => (
 ));
 
 Info.propTypes = {
-  children: PropTypes.arrayOf(oneOfType([PropTypes.string, PropTypes.object])).isRequired,
+  children: PropTypes.node.isRequired,
   heading: PropTypes.string.isRequired,
 };
 
