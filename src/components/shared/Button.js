@@ -1,9 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledBtn = styled(Link)`
+const StyledBtn = styled.button`
   background-color: ${({ theme }) => theme.color.primary};
   font-family: ${({ theme }) => theme.font.family.default};
   font-size: ${({ theme }) => theme.button.fontSize};
@@ -19,21 +16,7 @@ const StyledBtn = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 `;
 
-const Button = ({ children, to, className }) => (
-  <StyledBtn className={className} to={to}>
-    {children}
-  </StyledBtn>
-);
-
-Button.propTypes = {
-  children: PropTypes.string.isRequired,
-  to: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-    search: PropTypes.string,
-  }).isRequired,
-  className: PropTypes.string.isRequired,
-};
-
-export default Button;
+export default StyledBtn;
