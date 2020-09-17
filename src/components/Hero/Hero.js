@@ -33,15 +33,15 @@ const SubHeadline = styled.h2`
   min-height: 19px;
 `;
 
-const CtaButton = styled(Button)`
-  margin: 46px auto;
-`;
-
 const Subreddit = styled.p`
   width: 91px;
   height: 19px;
   font-weight: 500;
   margin-bottom: 37px;
+`;
+
+const HeroButton = styled(Button)`
+  margin: 46px auto;
 `;
 
 const Hero = () => (
@@ -50,9 +50,9 @@ const Hero = () => (
     <SubHeadline>
       Great timing, great results! Find the best time to post on your subreddit.
     </SubHeadline>
-    <CtaButton to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>
+    <HeroButton as={Link} to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>
       Show me the best time
-    </CtaButton>
+    </HeroButton>
     <Subreddit>r/javascript</Subreddit>
     <Link to={{ pathname: ROUTES.SEARCH, search: ROUTES.DEFAULT_QUERY }}>
       <HeroTable />

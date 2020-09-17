@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import * as ROUTES from '../../constants/routes';
 
+import Button from '../shared/Button';
+
 const Wrapper = styled.section`
   width: 100%;
   display: flex;
@@ -43,25 +45,6 @@ const Label = styled.label`
   color: #9e9e9e;
 `;
 
-const InputButton = styled.button`
-  background-color: ${({ theme }) => theme.color.primary};
-  font-family: ${({ theme }) => theme.font.family.default};
-  font-size: ${({ theme }) => theme.button.fontSize};
-  color: ${({ theme }) => theme.color.white};
-  line-height: ${({ theme }) => theme.button.lineHeight};
-  font-weight: ${({ theme }) => theme.button.fontWeight};
-  height: ${({ theme }) => theme.button.height};
-  text-transform: uppercase;
-  border: 0;
-  border-radius: 4px;
-  padding: 0 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const SubredditForm = () => {
   const location = useLocation();
   const history = useHistory();
@@ -93,7 +76,7 @@ const SubredditForm = () => {
       <Form onSubmit={handleSubmit}>
         <Label htmlFor="subreddit">r/</Label>
         <Input id="subreddit" type="text" value={inputValue} onChange={handleInputChange} />
-        <InputButton type="submit">Search</InputButton>
+        <Button type="submit">Search</Button>
       </Form>
     </Wrapper>
   );
