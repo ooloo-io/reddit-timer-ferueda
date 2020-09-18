@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "eslint --fix .",
-    "cypress": "TZ=Europe/Berlin cypress run",
+    "cypress": "cypress run",
     "cypress:open": "TZ=Europe/Berlin npx cypress open"
   },
   "husky": {
