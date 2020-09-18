@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = 'https://www.reddit.com/r';
-const API_SEARCH_QUERY = 'top.json?t=year&limit=100';
+const BASE_URL = 'https://www.reddit.com/r';
+const BASE_SEARCH_QUERY = 'top.json?t=year&limit=100';
 
 const fetchSubredditPosts = async (subreddit, abortController, after) => {
-  const res = await fetch(`${API_URL}/${subreddit}/${API_SEARCH_QUERY}&after=${after}`, {
+  const afterQuery = after ? `&after=${after}` : '';
+
+  const res = await fetch(`${BASE_URL}/${subreddit}/${BASE_SEARCH_QUERY}${afterQuery}`, {
     signal: abortController.signal,
   });
   const { data } = await res.json();
+
   return { posts: data.children.map((childObj) => childObj.data), after: data.after };
 };
 
@@ -36,7 +39,7 @@ const useSubredditPosts = (subreddit) => {
 
     recursiveFetch(subreddit, abortController)
       .then((results) => {
-        setPosts([...results]);
+        setPosts(results);
         setError(null);
         setIsLoading(false);
       })
