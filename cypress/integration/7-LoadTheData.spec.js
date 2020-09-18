@@ -11,7 +11,7 @@ describeOnBranches('load-the-data')('Load the Data', () => {
   });
 
   it('Calls the reddit API 5 times with correct URL to get the top 500 posts', () => {
-    cy.visitWithStubbedFetch('/search/javascript');
+    cy.visitWithStubbedFetch('/search?subreddit=javascript');
 
     // check if all requests have been sent (see /cypress/support/commands for aliases)
     cy.wait('@fetch-reddit-top-posts-page-1');
