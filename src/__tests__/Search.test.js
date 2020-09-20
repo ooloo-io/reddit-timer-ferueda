@@ -1,12 +1,8 @@
 import React from 'react';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import fetchMock from 'jest-fetch-mock';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
-import mockResponse from '../__mocks__/subreddit-javascript-response.json';
-
-fetchMock.enableMocks();
 
 const setup = (initialPath = '/search?subreddit=javascript') => {
   const app = (
@@ -19,7 +15,6 @@ const setup = (initialPath = '/search?subreddit=javascript') => {
 
 describe('Search Page', () => {
   test('loading spinner is visible and then disappears', async () => {
-    fetch.once(JSON.stringify(mockResponse));
     setup();
     const spinner = screen.getByRole('img', { name: /loading/i });
 
@@ -30,7 +25,6 @@ describe('Search Page', () => {
   });
 
   test('when submitting form, loading spinner appears and then disappears', async () => {
-    fetch.once(JSON.stringify(mockResponse));
     setup();
     const input = screen.getByRole('textbox', { name: 'r/' });
     const button = screen.getByRole('button', { name: /search/i });
@@ -46,5 +40,12 @@ describe('Search Page', () => {
     await waitForElementToBeRemoved(spinner);
 
     expect(spinner).not.toBeInTheDocument();
+  });
+
+  test('on failed request, error message is shown', async () => {
+    setup('/search?subreddit=failed');
+
+    expect(await screen.findByRole('heading', { name: /an error ocurred/i })).toBeInTheDocument();
+    expect(screen.queryByRole('img', { name: /loading/i })).not.toBeInTheDocument();
   });
 });
