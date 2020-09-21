@@ -36,10 +36,10 @@ const ColumnHeaderContainer = styled.ul`
 const ColumnHeaderItem = styled.li`
   width: 80px;
   height: 18px;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.font.size.small};
   font-weight: 500;
-  line-height: normal;
-  letter-spacing: normal;
+  line-height: ${({ theme }) => theme.font.lineHeight.normal};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.normal};
   text-align: center;
   color: #787878;
 `;
@@ -61,7 +61,7 @@ const RowHeaderItem = styled.li`
   font-size: 15px;
   font-weight: 600;
   line-height: 0.73;
-  letter-spacing: normal;
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.normal};
   text-align: center;
   color: #ffffff;
 `;
@@ -69,9 +69,9 @@ const RowHeaderItem = styled.li`
 const TimezoneText = styled.p`
   margin-top: 12px;
   height: 18px;
-  font-size: 14px;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: ${({ theme }) => theme.font.size.small};
+  line-height: ${({ theme }) => theme.font.lineHeight.normal};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.normal};
   text-align: center;
   color: ${({ theme }) => theme.color.grayBase};
 `;

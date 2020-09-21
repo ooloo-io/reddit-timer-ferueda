@@ -12,10 +12,10 @@ const TdButton = styled.button`
   width: 40px;
   height: 40px;
   background-color: ${({ col, theme }) => theme.heatmap.colors[col >= 10 ? 10 : col]};
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.button.fontSize};
   font-weight: bold;
-  line-height: 0.64;
-  letter-spacing: normal;
+  line-height: ${({ theme }) => theme.button.lineHeight};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing};
   text-align: center;
   vertical-align: middle;
   color: #ffffff;
