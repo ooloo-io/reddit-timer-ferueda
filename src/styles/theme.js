@@ -16,16 +16,19 @@ const theme = {
       headline: 'Bitter, sans-serif',
     },
     size: {
+      small: '14px',
       default: '16px',
       headline: '38px',
       sectionHeader: '24px',
     },
     lineHeight: {
       default: 1.69,
+      normal: 'normal',
     },
     letterSpacing: {
       default: '0.03px',
       heading: 'normal',
+      normal: 'normal',
     },
   },
   header: {
