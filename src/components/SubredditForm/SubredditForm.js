@@ -36,7 +36,7 @@ const Input = styled.input`
   background-color: #fff;
   padding-left: 16px;
   font-family: ${({ theme }) => theme.font.family.default};
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.font.size.small}; ;
 `;
 
 const Label = styled.label`

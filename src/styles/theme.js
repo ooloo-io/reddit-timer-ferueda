@@ -16,16 +16,19 @@ const theme = {
       headline: 'Bitter, sans-serif',
     },
     size: {
+      small: '14px',
       default: '16px',
       headline: '38px',
       sectionHeader: '24px',
     },
     lineHeight: {
       default: 1.69,
+      normal: 'normal',
     },
     letterSpacing: {
       default: '0.03px',
       heading: 'normal',
+      normal: 'normal',
     },
   },
   header: {
@@ -39,6 +42,21 @@ const theme = {
     lineHeight: 0.64,
     fontWeight: 500,
     height: '36px',
+  },
+  heatmap: {
+    colors: {
+      0: '#e0e592',
+      1: '#aed396',
+      2: '#a9d194',
+      3: '#a0ce93',
+      4: '#99cd94',
+      5: '#8cc894',
+      6: '#5eb391',
+      7: '#5db492',
+      8: '#5cb391',
+      9: '#5aad8c',
+      10: '#3984a3',
+    },
   },
 };
 
